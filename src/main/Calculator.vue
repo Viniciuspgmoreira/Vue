@@ -1,23 +1,23 @@
 <template>
   <div class="calculator">
     <Display value="1000"></Display>
-    <Button label="AC" triple></Button>
-    <Button label="/" operation></Button>
-    <Button label="7"></Button>
-    <Button label="8"></Button>
-    <Button label="9"></Button>
-    <Button label="*" operation></Button>
-    <Button label="4"></Button>
-    <Button label="5"></Button>
-    <Button label="6"></Button>
-    <Button label="-" operation></Button>
-    <Button label="1"></Button>
-    <Button label="2"></Button>
-    <Button label="3"></Button>
-    <Button label="+" operation></Button>
-    <Button label="0" double></Button>
-    <Button label="."></Button>
-    <Button label="=" operation></Button>
+    <Button label="AC" triple @onClick="clearMemory"></Button>
+    <Button label="/" operation @onClick="setOperation"></Button>
+    <Button label="7" @onClick="addDigit"></Button>
+    <Button label="8" @onClick="addDigit"></Button>
+    <Button label="9" @onClick="addDigit"></Button>
+    <Button label="*" operation @onClick="setOperation"></Button>
+    <Button label="4" @onClick="addDigit"></Button>
+    <Button label="5" @onClick="addDigit"></Button>
+    <Button label="6" @onClick="addDigit"></Button>
+    <Button label="-" operation @onClick="setOperation"></Button>
+    <Button label="1" @onClick="addDigit"></Button>
+    <Button label="2" @onClick="addDigit"></Button>
+    <Button label="3" @onClick="addDigit"></Button>
+    <Button label="+" operation @onClick="setOperation"></Button>
+    <Button label="0" double @onClick="addDigit"></Button>
+    <Button label="." @onClick="addDigit"></Button>
+    <Button label="=" operation @onClick="setOperation"></Button>
   </div>
 </template>
 
@@ -27,6 +27,17 @@ import Display from "../components/Display.vue";
 
 export default {
   components: { Button, Display },
+  methods: {
+    clearMemory() {
+      console.log("Limpar Memoria");
+    },
+    setOperation(operation) {
+      console.log("Operação" + operation);
+    },
+    addDigit(n) {
+      console.log("Digito" + n);
+    },
+  },
 };
 </script>
 
