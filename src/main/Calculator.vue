@@ -26,6 +26,15 @@ import Button from "../components/Button.vue";
 import Display from "../components/Display.vue";
 
 export default {
+  data: function () {
+    return {
+      displayValue: "0",
+      clearDisplay: false,
+      operation: null,
+      values: [0, 0],
+      current: 0,
+    };
+  },
   components: { Button, Display },
   methods: {
     clearMemory() {
