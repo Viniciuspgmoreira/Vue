@@ -1,6 +1,6 @@
 <template>
   <div class="calculator">
-    <Display value="1000"></Display>
+    <Display :value="displayValue"></Display>
     <Button label="AC" triple @onClick="clearMemory"></Button>
     <Button label="/" operation @onClick="setOperation"></Button>
     <Button label="7" @onClick="addDigit"></Button>
@@ -38,7 +38,7 @@ export default {
   components: { Button, Display },
   methods: {
     clearMemory() {
-      console.log("Limpar Memoria");
+      Object.assing(this.$data, this.$options.data());
     },
     setOperation(operation) {
       console.log("Operação" + operation);
