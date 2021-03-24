@@ -44,7 +44,20 @@ export default {
       console.log("Operação" + operation);
     },
     addDigit(n) {
-      console.log("Digito" + n);
+      if (n === "." && this.displayValue.includes(".")) {
+        return;
+      }
+      const clearDisplay = this.displayValue === "0" || this.clearDisplay;
+      const currentValue = clearDisplay ? "" : this.displayValue;
+      const displayValue = currentValue + n;
+      this.displayValue = displayValue;
+      this.clearDisplay = false;
+
+      if (n !== ".") {
+        const i = this.current;
+        const newValue = parseFloat(displayValue);
+        this.values[i] = newValue;
+      }
     },
   },
 };
